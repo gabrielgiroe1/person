@@ -31,7 +31,7 @@ families = people.group_by(&:last_name)
 
 sorted_families = families.sort_by { |_, members| -members.length }
 puts
-puts "Output"
+puts "Output:"
 sorted_families.each do |last_name, members|
   sorted_members = members.sort_by { |person| [person.age, person.first_name] }
   puts "#{last_name}: #{sorted_members.map(&:first_name).reverse.join(' ')}"
