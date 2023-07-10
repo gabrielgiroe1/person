@@ -6,7 +6,7 @@ class Person
   def initialize(first_name, last_name, date_of_birth)
     @first_name = first_name
     @last_name = last_name
-    @date_of_birth = Date.parse(date_of_birth)
+    @date_of_birth = Date.strptime(date_of_birth, '%Y-%m-%d')
   end
 
   def age
@@ -29,6 +29,6 @@ sorted_families = families.sort_by { |_, members| -members.length }
 puts
 puts "Output:"
 sorted_families.each do |last_name, members|
-  sorted_members = members.sort_by { |person| [person.age, person.first_name] }
-  puts "#{last_name}: #{sorted_members.map(&:first_name).reverse.join(' ')}"
+  sorted_members = members.sort_by { |person| [-person.age, person.first_name] }
+  puts "#{last_name}: #{sorted_members.map { |person| "#{person.first_name} (#{person.age})" }.join(' ')}"
 end
