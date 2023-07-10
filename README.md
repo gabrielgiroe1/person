@@ -21,14 +21,11 @@ For example, if I have this input:
   Matei Popescu 1929-03-23
   Cosmin Ionescu 1939-01-01
 ```
-
+I also add ages to see if this is correct.
 I should get this output:
 ```
 
-Ionescu: Andrei George Sergiu Cosmin
-Popescu: Maria Elena Matei
-Enescu: George MihaiOutput
-Ionescu: Cosmin Sergiu George Andrei
-Popescu: Matei Elena Maria
-Enescu: Mihai George
+Ionescu: Cosmin (84) Sergiu (33) George (31) Andrei (27)
+Popescu: Matei (94) Elena (32) Maria (28)
+Enescu: Mihai (43) George (32)
 ```
